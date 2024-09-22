@@ -96,8 +96,8 @@ where
     Sd: Data,
     D: Dimension + RemoveAxis,
 {
-    a: Array<Sd::Elem, D>,
-    b: Array<Sd::Elem, D>,
+    pub a: Array<Sd::Elem, D>,
+    pub b: Array<Sd::Elem, D>,
     extrapolate: Extrapolate,
 }
 
@@ -404,7 +404,7 @@ where
 
     /// solves the linear equation `A * k = rhs` with the [`RowBoundary`] used for
     /// each row in the data
-    ///  
+    ///
     /// **returns** k
     fn solve_for_k<Sd, Sx, _D>(
         mut k: ArrayViewMut<T, _D>,
